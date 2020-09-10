@@ -1,4 +1,4 @@
-let vizMap;
+let visMap;
 let prevHoveredElement = null;
 let loading = true;
 
@@ -7,11 +7,10 @@ function setup() {
   fetch("./notebook.json")
     .then((res) => res.json())
     .then((notebook) => {
-      vizMap = new Map(null, null, notebook);
-      vizMap.render();
+      visMap = new Map(null, null, notebook);
+      visMap.render();
       loading = false;
     });
-  // console.log(vizMap);
   // frameRate(5);
 }
 
@@ -23,5 +22,5 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  vizMap.render();
+  visMap.render();
 }

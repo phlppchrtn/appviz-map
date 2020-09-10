@@ -7,7 +7,7 @@ class Element {
   }
 
   getBoundingBox() {
-    const padding = this.layer.level * 30;
+    const padding = this.layer.level * 20 + 20;
     const rowSize = windowHeight / this.layer.rows;
     const columnSize = windowWidth / this.layer.columns;
     const x = this.column * columnSize + padding;
