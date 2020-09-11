@@ -14,11 +14,14 @@ class Rectangle extends Element {
     rect(x, y, width, height);
   }
 
-  isHovered(mouseX, mouseY) {
+  contains(xx, yy) {
     const { x, y, width, height } = this.getBoundingBox();
 
     return (
-      mouseX > x && mouseX < x + width && mouseY > y && mouseY < y + height
+      xx > x 
+      && xx < (x + width) 
+      && yy > y 
+      && yy < (y + height)
     );
   }
 }

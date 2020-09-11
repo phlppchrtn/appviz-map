@@ -22,4 +22,12 @@ class Map {
       level += 1;
     }
   }
+
+  selectElement (x, y) {
+    for (let layer of this.layers.slice().reverse()) {
+      let element = layer.selectElement(x, y );
+      if (element !=  null) return element;
+    }
+    return null;
+  }
 }

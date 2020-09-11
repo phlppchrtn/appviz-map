@@ -6,6 +6,14 @@ class Element {
     this.numOfRows = numOfRows;
   }
 
+  render (){ 
+    //This method must ne overridden 
+  }
+
+  contains(x, y){ 
+    //This method must ne overridden 
+  }
+
   getBoundingBox() {
     const padding = this.layer.level * 30;
     const rowSize = windowHeight / this.layer.rows;

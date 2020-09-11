@@ -11,10 +11,16 @@ class Layer {
   }
 
   render() {
-    for (let element of this.elements) {
-      element.render();
-    }
+    this.elements
+      .forEach( element => element.render());
   }
+
+  selectElement(x, y) {
+    for (let element of this.elements) {
+      if (element.contains(x, y)) return element;
+    }
+  }  
+
   renderGrid(style = { stroke: 100, strokeWeight: 1 }) {
     applyStyle(style);
     const rowSize = windowHeight / this.rows;
@@ -26,9 +32,9 @@ class Layer {
       line(columnSize * (j + 1), 0, columnSize * (j + 1), windowHeight);
     }
   }
+
   initStyle() {
-    for (let element of this.elements) {
-      element.initStyle();
-    }
+    this.elements
+      .forEach(element => element.initStyle());
   }
 }

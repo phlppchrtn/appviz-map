@@ -22,7 +22,7 @@ class Hexagone extends Element {
     endShape(CLOSE);
   }
 
-  isHovered(mouseX, mouseY) {
+  contains(mouseX, mouseY) {
     const { x, y, width, height } = this.getBoundingBox();
     const param = height / (2 * sqrt(3));
     const coefs = {
